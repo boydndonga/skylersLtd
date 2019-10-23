@@ -1,10 +1,4 @@
 import { Component } from '@angular/core';
-import { Hello } from 'src/js/nav'
-
-
-declare var jQuery: any;
-
-
 
 @Component({
   selector: 'app-root',
@@ -14,8 +8,4 @@ declare var jQuery: any;
 export class AppComponent {
   title = 'skylersLtd';
 
-  ngOnInit(){
-    Hello();
-
-  }
 }
