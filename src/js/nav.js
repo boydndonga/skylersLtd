@@ -1,12 +1,12 @@
  
 
- (function Hello($) {
+ (function changeNavColor() {
     $(window).scroll(() => {
-      if ($(document).scrollTop() > 650) {
-          $("nav").addClass("navScrollDown")
+      if ($(document).scrollTop() > 100) {
+          $("nav").addClass("navScrollDown").fadeIn()
       }
       else{
         $("nav").removeClass("navScrollDown")
      }
   })
-  })(jQuery);
+  })();
