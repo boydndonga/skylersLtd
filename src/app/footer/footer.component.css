@@ -24,7 +24,7 @@ section .section-title {
     color:#ffffff;
 }
 #footer a {
-    color: #f79831;
+    color: blue;
     text-decoration: none !important;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
