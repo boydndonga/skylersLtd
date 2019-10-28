@@ -5,11 +5,12 @@ import { BusinessCreateComponent } from './business-create/business-create.compo
 import { BusinessUpdateComponent } from './business-update/business-update.component';
 import { BusinessComponent } from './business/business.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { LoginComponent } from './login/login.component';
 
 
 
 @NgModule({
-  declarations: [BusinessListComponent, BusinessCreateComponent, BusinessUpdateComponent, BusinessComponent],
+  declarations: [BusinessListComponent, BusinessCreateComponent, BusinessUpdateComponent, BusinessComponent, LoginComponent],
   imports: [
     CommonModule,
     AdminRoutingModule
