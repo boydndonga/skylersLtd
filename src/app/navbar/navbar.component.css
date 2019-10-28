@@ -1,12 +1,27 @@
-.navScrollDown{
-    background-color: rgb(247,152,49);
-    color: green;
+.container{
+    color:white;
 }
-
-/* .navScrollUp{
-    background-color: rgb(34,132,198);
-} */
-
 nav{
     background-color: white;
 }
+.fa-bars{
+    color: rgb(247,152,49);
+    font-size: 30px;
+}
+.fa-bars-blue{
+    color:rgba(34, 132, 198);
+}
+ .nav-link {
+    color: rgb(247,152,49);
+  }
+   .nav-link:hover,  .nav-link:focus {
+    color:rgba(34, 132, 198);
+  }
+.navScrollDown{
+    color:rgba(34, 132, 198);
+    
+}
+.navScrollDown:hover{
+    color: rgb(247,152,49);
+}
+
