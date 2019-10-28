@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
+
 import { AdminModule } from './admin/admin.module';
 
 
@@ -16,7 +17,8 @@ import { AdminModule } from './admin/admin.module';
     AppComponent,
     NavbarComponent,
     AboutUsComponent,
-    FooterComponent
+    FooterComponent,
+    LandsGalleryComponent
   ],
   imports: [
     BrowserModule,
