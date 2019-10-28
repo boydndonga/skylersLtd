@@ -6,6 +6,7 @@ import { BusinessComponent } from './business/business.component';
 import { BusinessListComponent } from './business-list/business-list.component';
 import { BusinessUpdateComponent } from './business-update/business-update.component';
 import { BusinessCreateComponent } from './business-create/business-create.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,11 @@ const routes: Routes = [
             {
                 path: 'create',
                 component: BusinessCreateComponent
+            },
+
+            {
+                path: 'login',
+                component: LoginComponent
             },
 
         ]

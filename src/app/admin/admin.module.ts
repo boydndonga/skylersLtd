@@ -6,14 +6,15 @@ import { BusinessUpdateComponent } from './business-update/business-update.compo
 import { BusinessComponent } from './business/business.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [BusinessListComponent, BusinessCreateComponent, BusinessUpdateComponent, BusinessComponent, LoginComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
