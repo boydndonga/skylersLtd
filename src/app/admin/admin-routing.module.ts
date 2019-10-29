@@ -13,10 +13,10 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
     {
 
-        path:  'admin',
+        path:  '',
         component:  BusinessComponent,
-        children:[
-    
+        children: [
+
             {
                 path: 'list',
                 component: BusinessListComponent
@@ -39,8 +39,8 @@ const routes: Routes = [
 
         ]
     },
-    
-   
+
+
 ];
 
 @NgModule({

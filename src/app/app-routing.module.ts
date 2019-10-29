@@ -24,6 +24,9 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
+    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }
