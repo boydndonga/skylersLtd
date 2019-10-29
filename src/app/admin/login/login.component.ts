@@ -1,5 +1,10 @@
 import { Component} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -8,18 +13,20 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class LoginComponent {
 
+  responseMessage: string = '';
+  responseMessageType: string = '';
+  emailInput: string;
+  passwordInput: string;
+  userDetails: any;
   
-  // constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-
-  })
+  email =  new FormControl('');
+  password = new FormControl('');
 
 
-    onSubmit() {
-      // TODO: Use EventEmitter with form value
-      console.warn(this.loginForm.value);
-    }
+
 }
