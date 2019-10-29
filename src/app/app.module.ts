@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const config = {
@@ -38,7 +39,8 @@ const config = {
     FooterComponent,
     LandsGalleryComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
