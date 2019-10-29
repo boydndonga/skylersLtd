@@ -13,6 +13,7 @@ import { AdminModule } from './admin/admin.module';
 import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { HomeComponent } from './home/home.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
+import { ContactComponent } from './contact/contact.component';
 import { from } from 'rxjs';
 
 
@@ -23,7 +24,8 @@ import { from } from 'rxjs';
     AboutUsComponent,
     FooterComponent,
     LandsGalleryComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
