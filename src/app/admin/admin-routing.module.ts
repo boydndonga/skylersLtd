@@ -7,6 +7,7 @@ import { BusinessListComponent } from './business-list/business-list.component';
 import { BusinessUpdateComponent } from './business-update/business-update.component';
 import { BusinessCreateComponent } from './business-create/business-create.component';
 import { LoginComponent } from './login/login.component';
+import { AdminGuard } from './admin.guard';
 
 
 
@@ -19,17 +20,20 @@ const routes: Routes = [
 
             {
                 path: 'list',
-                component: BusinessListComponent
+                component: BusinessListComponent,
+                canActivate: [AdminGuard]
             },
 
             {
                 path: 'update',
-                component: BusinessUpdateComponent
+                component: BusinessUpdateComponent,
+                canActivate: [AdminGuard]
             },
 
             {
                 path: 'create',
-                component: BusinessCreateComponent
+                component: BusinessCreateComponent,
+                canActivate: [AdminGuard]
             },
 
             {
