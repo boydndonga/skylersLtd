@@ -10,6 +10,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AdminModule } from './admin/admin.module';
+import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
+import { HomeComponent } from './home/home.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
 
 
 @NgModule({
@@ -18,18 +21,20 @@ import { AdminModule } from './admin/admin.module';
     NavbarComponent,
     AboutUsComponent,
     FooterComponent,
-    LandsGalleryComponent
+    LandsGalleryComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  
+
 
  }
