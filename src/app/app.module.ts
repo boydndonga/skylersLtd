@@ -10,6 +10,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { AdminModule } from './admin/admin.module';
+import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
+import { HomeComponent } from './home/home.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import { ContactComponent } from './contact/contact.component';
 import { from } from 'rxjs';
 
 
@@ -19,18 +23,21 @@ import { from } from 'rxjs';
     NavbarComponent,
     AboutUsComponent,
     FooterComponent,
-    LandsGalleryComponent
+    LandsGalleryComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  
+
 
  }
