@@ -9,10 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminModule } from './admin/admin.module';
 import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { HomeComponent } from './home/home.component';
-import {AngularSvgIconModule} from 'angular-svg-icon';
 import { ContactComponent } from './contact/contact.component';
 import { from } from 'rxjs';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     AdminModule,
-    AngularSvgIconModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
