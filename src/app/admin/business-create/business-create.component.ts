@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { BusinessService } from '../crud/business.service';
+import { Router } from '@angular/router';
 
 
 
@@ -13,12 +15,26 @@ export class BusinessCreateComponent implements OnInit {
   createBiz = new FormGroup({
     title: new FormControl(''),
     description: new FormControl(''),
+    avatar: new FormControl('')
   });
 
 
-  constructor() { }
+  constructor(
+    private bizService: BusinessService,
+    private router:Router,
+    
+  ) { }
 
   ngOnInit() {
   }
 
+  onSubmit(value:any){
+    this.bizService.createUser(value)
+    .then(
+      res => {
+        this.createBiz.reset();
+        this.router.navigate(['/admin/list']);
+      }
+    )
+  }
 }

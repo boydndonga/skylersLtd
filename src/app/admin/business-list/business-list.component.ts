@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BusinessService } from '../crud/business.service';
 
 @Component({
   selector: 'app-business-list',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessListComponent implements OnInit {
 
-  constructor() { }
+  items:any[];
+  
+  constructor(
+    private bizService:BusinessService,
+  ) { }
 
   ngOnInit() {
+    this.bizService.getBusinesses()
+    .subscribe(result => {
+      this.items = result;
+    })
   }
 
 }

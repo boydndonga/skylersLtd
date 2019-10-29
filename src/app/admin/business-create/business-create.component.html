@@ -1,5 +1,5 @@
 
-    <form>
+    <form [formControl]="createBiz" (ngSubmit)="onSubmit(createBiz.value)">
         <div class="form-group">
           <label for="title">title</label>
           <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter title here">
@@ -7,6 +7,11 @@
         <div class="form-group">
           <label for="description">description</label>
           <input type="description" class="form-control" id="description" placeholder="enter description here">
+        </div>
+
+        <div class="form-group">
+            <label for="image">upload Image</label>
+            <input type="file" class="form-control-file" id="image">
         </div>
       
         <button type="submit" class="btn btn-primary">Submit</button>
