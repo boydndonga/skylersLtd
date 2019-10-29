@@ -61,3 +61,8 @@ a.card-link:hover{
   color: steelblue;
 
 }
+
+.fa-angle-double-right{
+  color:#f79831;
+  font-size: 25px;
+}
