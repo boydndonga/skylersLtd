@@ -8,7 +8,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { AdminModule } from './admin/admin.module';
+import { HomeComponent } from './home/home.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import { ContactComponent } from './contact/contact.component';
+import { from } from 'rxjs';
 
 // firebase imports
 import { AngularFireModule } from "@angular/fire";
@@ -31,7 +36,10 @@ var config = {
     AppComponent,
     NavbarComponent,
     AboutUsComponent,
-    FooterComponent
+    FooterComponent,
+    LandsGalleryComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -39,13 +47,14 @@ var config = {
     AdminModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  
+
 
  }

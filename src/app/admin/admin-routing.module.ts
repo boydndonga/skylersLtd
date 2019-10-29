@@ -9,6 +9,7 @@ import { BusinessCreateComponent } from './business-create/business-create.compo
 import { LoginComponent } from './login/login.component';
 
 
+
 const routes: Routes = [
     {
 
@@ -37,8 +38,8 @@ const routes: Routes = [
             },
 
         ]
-    }
-
+    },
+    
    
 ];
 

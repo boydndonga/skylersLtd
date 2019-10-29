@@ -1,0 +1,63 @@
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.fix-im {
+  position: relative;
+  bottom:11rem;
+}
+
+@media screen and (max-width:768px){
+  .flex-100 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .fix-im {
+    bottom: 0rem;
+  }
+}
+
+.ugali {
+  background: black;
+  padding: 6px;
+}
+
+.font-title{
+  padding-left: 130px;
+  height: 30px;
+  width: 30px;
+}
+.btn-link{
+  font-size: 1.5rem;
+  color: rgb(0, 123, 255);
+  text-decoration: none;
+
+}
+.btn-link:hover{
+  border-bottom: 1px dashed black;
+  text-decoration: none;
+  color: steelblue;
+
+}
+
+a.card-link:hover{
+  border-bottom: 1px dashed black;
+  width: 100px;
+  margin-left:0;
+  margin-right: auto;
+  margin-top: 0;
+  color: steelblue;
+}
+
+
+.text-in{
+  color: steelblue;
+
+}
