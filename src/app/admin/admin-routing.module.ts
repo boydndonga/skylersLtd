@@ -8,6 +8,7 @@ import { BusinessUpdateComponent } from './business-update/business-update.compo
 import { BusinessCreateComponent } from './business-create/business-create.component';
 
 
+
 const routes: Routes = [
     {
 
@@ -31,8 +32,8 @@ const routes: Routes = [
             },
 
         ]
-    }
-
+    },
+    
    
 ];
 
