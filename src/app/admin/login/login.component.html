@@ -1,0 +1,13 @@
+  
+    <label>
+      Email:
+      <input type="email" [formControl]="email">
+    </label>
+  
+    <label>
+      Password:
+      <input type="password" [formControl]="password">
+    </label>
+  
+    <button type="submit" (click)="authService.login(email.value, password.value)">Submit</button>
+  
