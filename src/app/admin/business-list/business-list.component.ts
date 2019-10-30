@@ -16,7 +16,7 @@ export class BusinessListComponent implements OnInit {
 
   ngOnInit() {
     this.bizService.getBusinesses()
-    .then(result => {
+    .subscribe(result => {
       this.items = result;
     })
   }

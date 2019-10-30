@@ -16,13 +16,17 @@ export class BusinessService {
     });
   }
 
+  // getBusinesses(){
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.db.collection('/businesses').snapshotChanges()
+  //     .subscribe(snapshots => {
+  //       resolve(snapshots)
+  //     })
+  //   })
+  // }
+
   getBusinesses(){
-    return new Promise<any>((resolve, reject) => {
-      this.db.collection('/businesses').snapshotChanges()
-      .subscribe(snapshots => {
-        resolve(snapshots)
-      })
-    })
+    return this.db.collection('businesses').snapshotChanges();
   }
 
 
