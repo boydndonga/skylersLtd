@@ -10,15 +10,16 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminModule } from './admin/admin.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { from } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 
 // firebase imports
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { environment } from 'src/environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 
@@ -41,9 +42,10 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {
