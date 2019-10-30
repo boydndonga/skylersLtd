@@ -14,14 +14,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent},
-  {
-    path: 'gallery',
-    component: LandsGalleryComponent
+    component: HomeComponent
   },
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path:'gallery',
+    component: LandsGalleryComponent
   },
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
