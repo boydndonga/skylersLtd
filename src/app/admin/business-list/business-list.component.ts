@@ -26,7 +26,7 @@ export class BusinessListComponent implements OnInit {
 
   viewDetails(biz:any){
     this.selectedBiz.emit(biz);
-    this.router.navigate(['admin/update']);
+    // this.router.navigate(['admin/update']);
   }
 
 }
