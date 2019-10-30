@@ -29,5 +29,12 @@ export class BusinessService {
     return this.db.collection('businesses').snapshotChanges();
   }
 
+  // update(policy: Policy) {
+  //   this.policyService.updatePolicy(policy);
+  // }
+
+  // delete(id: string) {
+  //   this.policyService.deletePolicy(id);
+  // }
 
 }

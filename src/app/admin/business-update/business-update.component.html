@@ -1,1 +1,24 @@
 <p>business-update works!</p>
+
+
+<form [formGroup]="updateBiz" (ngSubmit)="onSubmit(updateBiz.value)">
+        <div class="form-group">
+          <label for="title">title</label>
+          <input type="text" class="form-control"
+          formControlName="title" id="title" placeholder="Enter title here">
+        </div>
+
+        <div class="form-group">
+          <label for="description">description</label>
+          <input type="text" class="form-control"
+          formControlName="description" id="description" placeholder="enter description here">
+        </div>
+
+        <div class="form-group">
+            <label for="image">upload Image</label>
+            <input type="file" accept=".png,.jpg,.jpeg" 
+            class="form-control-file" formControlName="avatar" id="image">
+        </div>
+      
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </form>
