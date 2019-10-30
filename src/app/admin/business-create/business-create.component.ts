@@ -29,7 +29,7 @@ export class BusinessCreateComponent implements OnInit {
   }
 
   onSubmit(value:any){
-    this.bizService.createUser(value)
+    this.bizService.createBusiness(value)
     .then(
       res => {
         this.createBiz.reset();

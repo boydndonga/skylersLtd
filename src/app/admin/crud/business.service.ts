@@ -8,17 +8,17 @@ export class BusinessService {
 
   constructor(private db:AngularFirestore) { }
 
-  createUser(value:any){
-    return this.db.collection('business').add({
-      title: value.name,
-      description: value.name.toLowerCase(),
+  createBusiness(value:any){
+    return this.db.collection('businesses').add({
+      title: value.title,
+      description: value.description,
       avatar: value.avatar
     });
   }
 
   getBusinesses(){
     return new Promise<any>((resolve, reject) => {
-      this.db.collection('/people').snapshotChanges()
+      this.db.collection('/businesses').snapshotChanges()
       .subscribe(snapshots => {
         resolve(snapshots)
       })
