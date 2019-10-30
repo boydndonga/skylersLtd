@@ -152,6 +152,7 @@
             <a href="#" class="card-link">Micro Credit</a>
           </h4>
           <p class="card-text">
+            <i class="fa fa-angle-double-right"></i>
             Through our program we extend small loans to borrowers who lack collateral, steady
             employment,
             or a verifiable credit history. These loans are designed to assist in the borrowers
@@ -168,6 +169,7 @@
             <a href="#" class="card-link">Real Estate</a>
           </h4>
           <p class="card-text">
+            <i class="fa fa-angle-double-right"></i>
             At skylers we have trained field agents who spend their time scouting opportunities of land
             with the consideration of its natural resources to give a comprehensive guide to our clients
             on the
@@ -184,6 +186,7 @@
             <a href="#" class="card-link">Mentorship</a>
           </h4>
           <p class="card-text">
+            <i class="fa fa-angle-double-right"></i>
             We at skylers have a community enriched with experts who are provided to our members to
             guide them through their professional
             development and sustainable investment under structured guidelines of the company.
@@ -206,6 +209,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" type="button" data-toggle="collapse"
                       data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="fa fa-angle-double-right"></i>
                 Register with us
               </button>
             </h5>
@@ -225,6 +229,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                       data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="fa fa-angle-double-right"></i>
                 Select a service
               </button>
             </h5>
@@ -233,10 +238,10 @@
                data-parent="#accordionExample">
             <div class="card-body">
               <p>Choose a service of your choice by navigating to either <span><a
-                href="./development.html">Business development</a></span> or <span><a
-                href="./lands.html">Lands</a></span>. <br>We advise that you may read
+                routerLink="/bd">Business development</a></span> or <span><a
+                routerLink="/gallery">Lands</a></span>. <br>We advise that you may read
                 through the terms and conditions before settling for a respective service. <br>Reach
-                us <a href="./contact.html">here</a> for any further inquiries or assistance.</p>
+                us <a routerLink="/contact">here</a> for any further inquiries or assistance.</p>
             </div>
           </div>
         </div>
@@ -245,6 +250,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                       data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <i class="fa fa-angle-double-right"></i>
                 All time support
               </button>
             </h5>
@@ -260,6 +266,7 @@
       </div>
     </div>
     <div class="col-md-6">
+      <div [innerHTML]="svg"></div>
     </div>
   </div>
   <!-- /.row -->

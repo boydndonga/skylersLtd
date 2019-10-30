@@ -44,11 +44,12 @@
   border-bottom: 1px dashed black;
   text-decoration: none;
   color: #2284c6;;
+  text-decoration: underline #f79831;
 
 }
 
 a.card-link:hover{
-  border-bottom: 1px dashed black;
+  text-decoration: underline #f79831;
   width: 100px;
   margin-left:0;
   margin-right: auto;
@@ -77,6 +78,11 @@ a.card-link:hover{
 }
 .carousel-indicators {
   bottom: 19px;
+}
+
+.fa-angle-double-right{
+  color:#f79831;
+  font-size: 25px;
 }
 
 .carousel-indicators li {

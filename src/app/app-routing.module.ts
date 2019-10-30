@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule, ActivatedRouteSnapshot} from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import {HomeComponent} from './home/home.component';
 import { LandsGalleryComponent } from './lands-gallery/lands-gallery.component';
 import {ContactComponent} from './contact/contact.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,13 @@ const routes: Routes = [
     path:'gallery',
     component: LandsGalleryComponent
   },
+  {
+    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({
