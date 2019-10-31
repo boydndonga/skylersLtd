@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { BusinessService } from '../crud/business.service';
 import { Router } from '@angular/router';
+import { Business } from '../business-class/business';
 
 
 
@@ -12,12 +13,7 @@ import { Router } from '@angular/router';
 })
 export class BusinessCreateComponent implements OnInit {
 
-  createBiz = new FormGroup({
-    title: new FormControl(''),
-    description: new FormControl(''),
-    avatar: new FormControl('')
-  });
-
+  createBiz = new Business("","","");
 
   constructor(
     private bizService: BusinessService,
@@ -28,11 +24,11 @@ export class BusinessCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(value:any){
-    this.bizService.createBusiness(value)
+  onSubmit(){
+    this.bizService.createBusiness(this.createBiz)
     .then(
       res => {
-        this.createBiz.reset();
+        this.createBiz= new Business("","","");;
         this.router.navigate(['/admin/list']);
       }
     )
