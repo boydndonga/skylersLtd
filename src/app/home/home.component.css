@@ -130,4 +130,14 @@ a.card-link:hover{
     background-size: 125% 100%;
     background-position-y: center;
   }
+
+  h5.imageStrip{
+    height: 200px;
+  }
+
+  .img#imageStrip{
+    height:50px;
+    width: 100%;
+
+  }
 }
