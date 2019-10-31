@@ -9,13 +9,12 @@
                     <p>Description: {{item.payload.doc.data().description}}</p>
                 </div>
                 <div class="col col-md-2 actions-col">
-                    <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+                    <button class="btn btn-outline-primary action" (click)="editDetails(item,i)" type="button">
                         Edit
                     </button>
                     <button class="btn btn-outline-primary action" (click)="delete(item)" type="button">
                         Delete
                     </button>
-                    <!-- <app-business-update (selectedBiz)="updater($event,i)"></app-business-update> -->
                 </div>
             </div>
         </div>
@@ -25,20 +24,21 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-12">
-                        <input type="text" class="form-control" [(ngModel)]="item.payload.doc.data().title" placeholder="Edit Name">
-                        <p>{{selectedBiz}}</p>
+                        <input type="text" class="form-control" [formControl]="title"  placeholder="Edit Name">
                       </div>
                       <div class="col-md-12">
-                        <input type="text" class="form-control" [(ngModel)]="item.payload.doc.data().description" placeholder="Edit Desc">
+                        <input type="text" class="form-control" [(ngModel)]="selectedBiz.payload.doc.data().description" placeholder="Edit Desc">
                       </div>
                       <div class="col-md-12">
-                        <input type="text" class="form-control" [(ngModel)]="item.payload.doc.data().avatar" placeholder="Edit Avatar">
+                        <input type="text" class="form-control" [(ngModel)]="selectedBiz.payload.doc.data().avatar" placeholder="Edit Avatar">
                       </div>
                     </div>
+
+
                   </div>
        
-                  <a href="#" class="card-link" (click)="item.isEdit = false">Cancel</a>
-                  <a href="#" class="card-link" (click)="UpdateRecord(item)">Update</a>
+                  <button class="card-link" (click)="editDetails(selectedBiz,selectedBizIndex)">Cancel</button>
+                  <button class="card-link" (click)="updateRecord(title.value)">Update</button>
                 </div>
               </ng-template>
     </div>

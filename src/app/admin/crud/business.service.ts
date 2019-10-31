@@ -30,8 +30,11 @@ export class BusinessService {
     return this.db.collection('businesses').snapshotChanges();
   }
 
-  updateEdit(value:any) {
+  updateBiz(value:any) {
     this.db.collection('businesses').doc(value.payload.doc.id).set({
+      title: value.title,
+      description: value.description,
+      avatar: value.avatar,
       edit: true
     });
   }
