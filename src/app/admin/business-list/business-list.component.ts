@@ -1,19 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { BusinessService } from '../crud/business.service';
 import { Router } from '@angular/router';
-import { FormGroup,FormControl } from '@angular/forms';
-import { HttpXsrfTokenExtractor } from '@angular/common/http';
+import { Business } from '../business-class/business';
 
-export class Business{
-  constructor(
-    public title:string,
-    public description:string,
-    public avatar:string,
-  ){
 
-  }
-  
-}
 
 @Component({
   selector: 'app-business-list',
