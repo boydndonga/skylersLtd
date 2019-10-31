@@ -4,40 +4,56 @@
    background-repeat: no-repeat;
    background-size: cover;
 }
+
 #sect1{
    padding-top: 10rem;
-   color:white
+   color:white;
 }
+
 .sect1-text{
    color:white;
 }
+
 h1{
    text-decoration: underline #f79831;
 }
+
 h2{
    background-color: #2284c6;
    color: #f79831;
+  text-align: center;
 }
+
+.h1{
+  background-color: #2284c6;
+  color: #f79831;
+}
+
 h3{
    color:rgb(34,132,198);
 
 }
+
 .fa-angle-double-right{
    color:#f79831;
    font-size: 25px;
 }
 
+
 @media screen and (max-width: 575.98px){
+
    /* reverse the content layout */
    .vision{
       display: flex;
       flex-direction: column-reverse; 
    }
+
    #mission{
       display: flex;
       flex-direction: column-reverse; 
    }
    /* end reverse the content layout */
+
    .sect1-text{
       color:white;
       font-size: 19.5px;
