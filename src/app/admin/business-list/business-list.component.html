@@ -24,21 +24,19 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-12">
-                        <input type="text" class="form-control" [formControl]="title"  placeholder="Edit Name">
+                        <input type="text" class="form-control" [(ngModel)]="updateForm.title" name="title"  placeholder="Edit Name">
                       </div>
                       <div class="col-md-12">
-                        <input type="text" class="form-control" [(ngModel)]="selectedBiz.payload.doc.data().description" placeholder="Edit Desc">
+                        <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc">
                       </div>
                       <div class="col-md-12">
-                        <input type="text" class="form-control" [(ngModel)]="selectedBiz.payload.doc.data().avatar" placeholder="Edit Avatar">
+                        <input type="text" class="form-control" [(ngModel)]="updateForm.avatar" placeholder="Edit Avatar">
                       </div>
                     </div>
-
-
                   </div>
        
                   <button class="card-link" (click)="editDetails(selectedBiz,selectedBizIndex)">Cancel</button>
-                  <button class="card-link" (click)="updateRecord(title.value)">Update</button>
+                  <button class="card-link" (click)="updateRecord()">Update</button>
                 </div>
               </ng-template>
     </div>
