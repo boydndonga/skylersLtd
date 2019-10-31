@@ -9,10 +9,10 @@
                     <p>Description: {{item.payload.doc.data().description}}</p>
                 </div>
                 <div class="col col-md-2 actions-col">
-                    <button class="btn btn-outline-primary action" (click)="viewDetails(item.payload.doc.data(),i)" type="button">
+                    <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
                         Edit
                     </button>
-                    <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+                    <button class="btn btn-outline-primary action" (click)="delete(item)" type="button">
                         Delete
                     </button>
                     <!-- <app-business-update (selectedBiz)="updater($event,i)"></app-business-update> -->

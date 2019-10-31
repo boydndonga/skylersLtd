@@ -30,12 +30,15 @@ export class BusinessService {
     return this.db.collection('businesses').snapshotChanges();
   }
 
-  // update(policy: Policy) {
-  //   this.policyService.updatePolicy(policy);
-  // }
+  updateEdit(value:any) {
+    this.db.collection('businesses').doc(value.payload.doc.id).set({
+      edit: true
+    });
+  }
 
-  // delete(id: string) {
-  //   this.policyService.deletePolicy(id);
-  // }
+  deleteBiz(biz:any){
+    
+    return this.db.collection('businesses').doc(biz.payload.doc.id).delete();
+  }
 
 }

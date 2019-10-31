@@ -13,6 +13,8 @@ export class BusinessListComponent implements OnInit {
   // @Output() selectedBiz= new EventEmitter<any>();
   selectedBizIndex:number;
   selectedBiz:any;
+  conf:boolean
+
 
   constructor(
     private bizService:BusinessService,
@@ -26,10 +28,30 @@ export class BusinessListComponent implements OnInit {
     })
   }
 
-  viewDetails(biz:any,bizIndex:number){
-    this.selectedBizIndex=bizIndex;
-    this.selectedBiz=biz
-    // this.router.navigate(['admin/update']);
+  // viewDetails(biz:any,bizIndex:number){
+  //   this.selectedBizIndex=bizIndex;
+  //   this.selectedBiz=biz
+  // }
+
+  viewDetails(biz:any){
+    console.log(biz);
+    this.bizService.updateEdit(biz);
   }
 
+  delete(item:any){
+    this.conf = confirm('Are you sure to delete?');
+    if(this.conf){
+          this.bizService.deleteBiz(item)
+        .then(
+          res => {
+            this.router.navigate(['/admin/list']);
+          },
+          err => {
+            console.log(err);
+          }
+        )
+      }
+    }
+    
+  
 }
