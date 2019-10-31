@@ -1,6 +1,6 @@
 <div class="list-group business-list">
         <div *ngFor="let item of items; let i=index" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="row">
+            <div class="row" *ngIf="i!==selectedBizIndex; else elseBlock">
                 <div class="col col-md-2 image-col">
                     <img class="image" [src]="item.payload.doc.data().avatar">
                 </div>
@@ -9,15 +9,37 @@
                     <p>Description: {{item.payload.doc.data().description}}</p>
                 </div>
                 <div class="col col-md-2 actions-col">
-                    <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+                    <button class="btn btn-outline-primary action" (click)="viewDetails(item.payload.doc.data(),i)" type="button">
                         Edit
                     </button>
-                    <app-business-update (selectedBiz)="updater($event,i)"></app-business-update>
+                    <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+                        Delete
+                    </button>
+                    <!-- <app-business-update (selectedBiz)="updater($event,i)"></app-business-update> -->
                 </div>
             </div>
         </div>
+        <ng-template #elseBlock>
+                <div class="card-body">
+                  <h5 class="card-title">Edit</h5>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" [(ngModel)]="item.payload.doc.data().title" placeholder="Edit Name">
+                        <p>{{selectedBiz}}</p>
+                      </div>
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" [(ngModel)]="item.payload.doc.data().description" placeholder="Edit Desc">
+                      </div>
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" [(ngModel)]="item.payload.doc.data().avatar" placeholder="Edit Avatar">
+                      </div>
+                    </div>
+                  </div>
+       
+                  <a href="#" class="card-link" (click)="item.isEdit = false">Cancel</a>
+                  <a href="#" class="card-link" (click)="UpdateRecord(item)">Update</a>
+                </div>
+              </ng-template>
     </div>
 
-
-    
-    

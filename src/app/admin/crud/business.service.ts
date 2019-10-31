@@ -12,7 +12,8 @@ export class BusinessService {
     return this.db.collection('businesses').add({
       title: value.title,
       description: value.description,
-      avatar: value.avatar
+      avatar: value.avatar,
+      edit: false
     });
   }
 

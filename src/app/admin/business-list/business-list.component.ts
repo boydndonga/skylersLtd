@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class BusinessListComponent implements OnInit {
 
   items:any[];
-  @Output() selectedBiz= new EventEmitter<any>();
+  // @Output() selectedBiz= new EventEmitter<any>();
+  selectedBizIndex:number;
+  selectedBiz:any;
 
   constructor(
     private bizService:BusinessService,
@@ -24,8 +26,9 @@ export class BusinessListComponent implements OnInit {
     })
   }
 
-  viewDetails(biz:any){
-    this.selectedBiz.emit(biz);
+  viewDetails(biz:any,bizIndex:number){
+    this.selectedBizIndex=bizIndex;
+    this.selectedBiz=biz
     // this.router.navigate(['admin/update']);
   }
 
