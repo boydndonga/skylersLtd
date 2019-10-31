@@ -24,9 +24,13 @@ export class LoginComponent {
     private router: Router
   ) { }
 
+
   email =  new FormControl('');
   password = new FormControl('');
 
 
+  onSubmit(mail,pass){
+   this.authService.login(mail,pass);
+  }
 
 }
