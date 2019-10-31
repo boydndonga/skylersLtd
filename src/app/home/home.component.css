@@ -1,11 +1,19 @@
+/* Importing the google fonts  */
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
+
 .carousel-item {
-  height: 65vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  height: 90vh;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.card img{
+  height: 200px;
+  width: 100%;
 }
 
 .fix-im {
@@ -13,16 +21,7 @@
   bottom:11rem;
 }
 
-@media screen and (max-width:768px){
-  .flex-100 {
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .fix-im {
-    bottom: 0rem;
-  }
-}
+
 
 .ugali {
   background: black;
@@ -30,7 +29,8 @@
 }
 
 .font-title{
-  padding-left: 130px;
+ margin-left: auto;
+ margin-right: auto;
   height: 30px;
   width: 30px;
 }
@@ -41,10 +41,9 @@
 
 }
 .btn-link:hover{
-  text-decoration: underline #f79831;
-  /*text-decoration: none;*/
-  color: steelblue;
-
+  border-bottom: 1px dashed black;
+  text-decoration: none;
+  color: #2284c6;;
 }
 
 a.card-link:hover{
@@ -53,17 +52,92 @@ a.card-link:hover{
   margin-left:0;
   margin-right: auto;
   margin-top: 0;
-  color: steelblue;
+  color: #2284c6;;
 }
 
 
 .text-in{
-  color: steelblue;
-  text-decoration: underline #f79831;
+  color: #2284c6;;
 
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='yellow' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='yellow' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+}
+.carousel-caption {
+  text-align: left;
+  margin-right: auto;
+  top: 40%;
+  z-index: 30;
+  font-family: 'Lobster', cursive;
+}
+.carousel-indicators {
+  bottom: 19px;
 }
 
 .fa-angle-double-right{
   color:#f79831;
   font-size: 25px;
+}
+
+.carousel-indicators li {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+.carousel-indicators li.active{
+   opacity:1;
+}
+.fa-trophy, .fa-home, .fa-user, .fa-briefcase, .fa-pagelines, .fa-cogs{
+  font-size: 30px;
+  color:#f79831;
+}
+.card-header{
+  color:#2284c6;
+  text-align: center;
+}
+.h1{
+  background-color: #2284c6;
+  color: #f79831;
+}
+@media screen and (max-width:768px){
+  .flex-100 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .fix-im {
+    bottom: 0rem;
+  }
+  .card-header{
+    color:#2284c6;
+    /* text-align: end; */
+  }
+  .container, .card{
+    width: 100%;
+  }
+  .carousel-item {
+    height: 90vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: 125% 100%;
+    -moz-background-size: 125% 100%;
+    -o-background-size: 125% 100%;
+    background-size: 125% 100%;
+    background-position-y: center;
+  }
+
+  h5.imageStrip{
+    height: 200px;
+  }
+
+  .img#imageStrip{
+    height:50px;
+    width: 100%;
+
+  }
 }
