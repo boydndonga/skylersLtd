@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { BusinessService } from '../crud/business.service';
+import { Router } from '@angular/router';
+import { Business } from '../business-class/business';
+
+
 
 @Component({
   selector: 'app-business-create',
@@ -7,9 +13,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessCreateComponent implements OnInit {
 
-  constructor() { }
+  createBiz = new Business("","","");
+
+  constructor(
+    private bizService: BusinessService,
+    private router:Router,
+    
+  ) { }
 
   ngOnInit() {
   }
 
+  onSubmit(){
+    this.bizService.createBusiness(this.createBiz)
+    .then(
+      res => {
+        this.createBiz= new Business("","","");;
+        this.router.navigate(['/admin/list']);
+      }
+    )
+  }
 }

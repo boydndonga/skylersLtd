@@ -1,7 +1,8 @@
-import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
-import {$} from 'protractor';
 import {DOCUMENT} from '@angular/common';
+import {createViewChild} from '@angular/compiler/src/core';
+import {Component, OnInit} from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-navbar',
@@ -9,38 +10,25 @@ import {DOCUMENT} from '@angular/common';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  collapseMenu: boolean;
 
-  constructor(private router: Router, @Inject(DOCUMENT) document) {
-  // const mainNav = document.getElementById('#navbarResponsive') as HTMLElement;
-
+  constructor(private router: Router) {
   router.events.subscribe((event) => {
 
       if (event instanceof NavigationStart) {
         // Show loading indicator
-        // if (mainNav.hasClass('open')) {
-        //   mainNav.css('height', '1px').removeClass('in').addClass('collapse');
-        //   mainNav.addClass('open');
-        // }
         console.log(event);
       }
 
       if (event instanceof NavigationEnd) {
         // Hide loading indicator
-        // if (mainNav.hasClass('open')) {
-        //   mainNav.css('height', '1px').removeClass('in').addClass('collapse');
-        //   mainNav.addClass('open');
-        // }
         console.log(event);
 
       }
 
       if (event instanceof NavigationError) {
         // Hide loading indicator
-        // if (mainNav.hasClass('open')) {
-        //   mainNav.css('height', '1px').removeClass('in').addClass('collapse');
-        //   mainNav.addClass('open');
-        // }
-          // Present error to user
+        // Present error to user
         console.log(event.error);
       }
     });
@@ -48,7 +36,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
 }

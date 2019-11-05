@@ -1,1 +1,43 @@
-<p>business-list works!</p>
+<div class="list-group business-list">
+        <div *ngFor="let item of items; let i=index" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="row" *ngIf="i!==selectedBizIndex; else elseBlock">
+                <div class="col col-md-2 image-col">
+                    <img class="image" [src]="item.payload.doc.data().avatar">
+                </div>
+                <div class="col col-md-8 text-col">
+                    <h5 class="mb-1">{{item.payload.doc.data().title}}</h5>
+                    <p>Description: {{item.payload.doc.data().description}}</p>
+                </div>
+                <div class="col col-md-2 actions-col">
+                    <button class="btn btn-outline-primary action" (click)="editDetails(item,i)" type="button">
+                        Edit
+                    </button>
+                    <button class="btn btn-outline-primary action" (click)="delete(item)" type="button">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+                <div class="card-body">
+                  <h5 class="card-title">Edit</h5>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" [(ngModel)]="updateForm.title" name="title"  placeholder="Edit Name">
+                      </div>
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc">
+                      </div>
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" [(ngModel)]="updateForm.avatar" placeholder="Edit Avatar">
+                      </div>
+                    </div>
+                  </div>
+       
+                  <button class="card-link" (click)="editDetails(selectedBiz,selectedBizIndex)">Cancel</button>
+                  <button class="card-link" (click)="updateRecord()">Update</button>
+                </div>
+              </ng-template>
+    </div>
+

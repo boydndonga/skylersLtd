@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-business-update',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessUpdateComponent implements OnInit {
 
+
+  updateBiz = new FormGroup({
+    title: new FormControl(''),
+    description: new FormControl(''),
+    avatar: new FormControl('')
+  });
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+
+  }
+  
+  updater(biz:any){
+    console.log(this.updateBiz.value);
   }
 
 }

@@ -10,26 +10,19 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminModule } from './admin/admin.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { from } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 
 // firebase imports
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { environment } from 'src/environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
-const config = {
-  apiKey: 'AIzaSyDkeFvdlaRdQyJ7C00v8tcq1GALX8jBiOE',
-  authDomain: 'fir-auth-91d9d.firebaseapp.com',
-  databaseURL: 'https://fir-auth-91d9d.firebaseio.com',
-  projectId: 'fir-auth-91d9d',
-  storageBucket: 'fir-auth-91d9d.appspot.com',
-  messagingSenderId: '286101264214',
-  appId: '1:286101264214:web:7b94e117650106ec8d28f7',
-  measurementId: 'G-P41Z3KRWDC'
-};
+
 
 @NgModule({
   declarations: [
@@ -47,11 +40,12 @@ const config = {
     AppRoutingModule,
     AdminModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {
