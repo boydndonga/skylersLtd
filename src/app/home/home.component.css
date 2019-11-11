@@ -100,12 +100,14 @@ a.card-link:hover{
 }
 
 .card-header{
-  color:#2284c6;
+  color:rgb(34, 132, 198);
   text-align: center;
 }
 
 .h1{
-  background-color: #2284c6;
+  background: linear-gradient(rgba(34, 132, 198,0.8),rgba(34, 132, 198,0.8)),url('../../assets/images/mat1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #f79831;
 }
 
