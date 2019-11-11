@@ -3,6 +3,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
 
 .carousel-item {
+  
   height: 90vh;
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
@@ -110,7 +111,9 @@ a.card-link:hover{
   background-repeat: no-repeat;
   color: #f79831;
 }
-
+header p{
+  font-size: 2rem;
+}
 @media screen and (max-width:768px){
 
   .flex-100 {
