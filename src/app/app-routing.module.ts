@@ -3,6 +3,7 @@ import {Routes, RouterModule, ActivatedRouteSnapshot} from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import {HomeComponent} from './home/home.component';
 import { LandsGalleryComponent } from './lands-gallery/lands-gallery.component';
+import { BDevComponent } from './b-dev/b-dev.component';
 import {ContactComponent} from './contact/contact.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path:'gallery',
     component: LandsGalleryComponent
+  },
+  {
+    path: 'business-development',
+    component: BDevComponent 
   },
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
