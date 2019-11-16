@@ -31,4 +31,10 @@ nav{
 .navScrollDown:hover{
     color: rgb(247,152,49);
 }
-
+@media only screen and (min-width:1250px){
+    .container{
+        padding-left: 25px;
+        padding-right: 25px;
+        min-width: 100%
+    }
+} 
