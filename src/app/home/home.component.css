@@ -3,6 +3,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
 
 .carousel-item {
+  
   height: 90vh;
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
@@ -100,15 +101,19 @@ a.card-link:hover{
 }
 
 .card-header{
-  color:#2284c6;
+  color:rgb(34, 132, 198);
   text-align: center;
 }
 
 .h1{
-  background-color: #2284c6;
+  background: linear-gradient(rgba(34, 132, 198,0.8),rgba(34, 132, 198,0.8)),url('../../assets/images/mat1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #f79831;
 }
-
+header p{
+  font-size: 2rem;
+}
 @media screen and (max-width:768px){
 
   .flex-100 {

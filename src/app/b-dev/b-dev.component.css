@@ -1,0 +1,60 @@
+.sect1{
+   height: 80vh;
+   background-image: url('src/assets/images/b-dev.png');
+   background-size: 100% 125%;
+   background-repeat: no-repeat;
+   margin-right: -.5rem;
+   margin-left: -1rem;
+}
+.fa{
+   color: #f79831;
+}
+h3:hover{
+   cursor: pointer;
+   text-decoration: underline #53a846;
+}
+h4:hover{
+   cursor: pointer;
+   text-decoration: underline #53a846;
+}
+.container-fluid{
+   scroll-snap-type: y proximity;
+   /* -moz-scroll-snap-type: y mandatory; */
+   
+}
+.container-fluid div{
+   scroll-snap-align: start;
+   /* -moz-scroll-snap-align: center; */
+}
+.card-header{
+   color:rgb(34,132,198);
+}
+.card{
+   border-top: 2px solid #2284c6 ;
+}
+.card:hover{
+   border-top: 5px solid #2284c6 ;
+   transition: ease-in-out;
+}
+.card2{
+   border-top: 2px solid #f79831;
+}
+.card2:hover{
+   border-top: 5px solid #f79831;
+}
+div .card:nth-child(even){
+   border-top: 2px solid #f79831;
+}
+div .card:nth-child(even):hover{
+   border-top: 5px solid #f79831;
+}
+@media only screen and (max-width:900px){
+   .sect1{
+      height: 90vh;
+      background-image: url('src/assets/images/resp-bs-dev.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-right: -.5rem;
+      margin-left: -1rem;
+   }
+}

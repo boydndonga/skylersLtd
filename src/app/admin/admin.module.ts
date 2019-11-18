@@ -9,7 +9,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [BusinessListComponent, BusinessCreateComponent, BusinessComponent, LoginComponent],
+  declarations: [
+    BusinessListComponent, 
+    BusinessCreateComponent, 
+    BusinessComponent, 
+    LoginComponent
+  ],
+
   imports: [
     CommonModule,
     AdminRoutingModule,
