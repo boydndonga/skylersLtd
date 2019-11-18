@@ -16,15 +16,6 @@ export class BusinessService {
     return this.storage.upload(path, file);
   }
 
-  // createBusiness(value:any){
-  //   return this.db.collection('businesses').add({
-  //     title: value.title,
-  //     description: value.description,
-  //     avatar: value.avatar,
-  //     edit: false
-  //   });
-  // }
-
   createBusiness(value:Business){
     let p = new Promise((resolve, reject)=>{
       this.uploadFile(value.avatar).then(snap=>{
