@@ -16,6 +16,8 @@ export class BusinessListComponent implements OnInit {
   selectedBizIndex:number;
   selectedBiz:any;
   conf:boolean
+  changeState:Boolean = false
+
 
 
   updateForm = new Business("","",null);
@@ -33,6 +35,11 @@ export class BusinessListComponent implements OnInit {
     })
   }
 
+  onFileChange(event){
+    this.updateForm.avatar = event.target.files[0];
+    this.changeState = true
+  }
+
   editDetails(biz:any,bizIndex:number){
     if(this.selectedBizIndex==bizIndex){
       this.selectedBizIndex=null;
@@ -45,7 +52,7 @@ export class BusinessListComponent implements OnInit {
   }
 
   updateRecord(){
-    this.bizService.updateBiz(this.updateForm,this.selectedBiz)
+    this.bizService.updateBiz(this.updateForm,this.selectedBiz,this.changeState)
     this.selectedBizIndex=null;
     this.selectedBiz=''
 

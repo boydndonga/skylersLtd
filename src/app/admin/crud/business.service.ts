@@ -57,13 +57,41 @@ export class BusinessService {
     return this.db.collection('businesses').snapshotChanges();
   }
 
-  updateBiz(updateValue:any,valueId:any) {
-    this.db.collection('businesses').doc(valueId.payload.doc.id).set({
-      title: updateValue.title,
-      description: updateValue.description,
-      avatar: updateValue.avatar,
-      edit: true
-    });
+  updateBiz(updateValue:any,valueId:any,changed:Boolean) {
+
+    new Promise((resolve, reject)=>{
+
+      if(changed==true){
+
+        this.uploadFile(updateValue.avatar).then(snap=>{
+          snap.ref.getDownloadURL().then(url=>{
+            console.log(url);
+            this.db.collection('businesses').doc(valueId.payload.doc.id).set({
+              title: updateValue.title,
+              description: updateValue.description,
+              avatar: url,
+              edit: true
+            }).then(ref=>{
+              resolve();1
+            }).catch(e=>{
+              console.log(e);
+              reject();
+            })
+          }).catch(e=>{
+            console.log(e);
+            reject();
+          })
+        })
+      }else{
+
+        this.db.collection('businesses').doc(valueId.payload.doc.id).set({
+        title: updateValue.title,
+        description: updateValue.description,
+        avatar: updateValue.avatar,
+        edit: true
+      })
+      }
+    })
   }
 
   deleteBiz(biz:any){
