@@ -1,30 +1,57 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Business } from '../business-class/business';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BusinessService {
 
-  constructor(private db:AngularFirestore) { }
+  constructor(private db:AngularFirestore, private storage:AngularFireStorage) { }
 
-  createBusiness(value:any){
-    return this.db.collection('businesses').add({
-      title: value.title,
-      description: value.description,
-      avatar: value.avatar,
-      edit: false
-    });
+  uploadFile(file:File){
+    let path = `/uploads/${new Date().getTime()}_${file.name}`;
+    return this.storage.upload(path, file);
   }
 
-  // getBusinesses(){
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.db.collection('/businesses').snapshotChanges()
-  //     .subscribe(snapshots => {
-  //       resolve(snapshots)
-  //     })
-  //   })
+  // createBusiness(value:any){
+  //   return this.db.collection('businesses').add({
+  //     title: value.title,
+  //     description: value.description,
+  //     avatar: value.avatar,
+  //     edit: false
+  //   });
   // }
+
+  createBusiness(value:Business){
+    let p = new Promise((resolve, reject)=>{
+      this.uploadFile(value.avatar).then(snap=>{
+        snap.ref.getDownloadURL().then(url=>{
+          console.log(url);
+          this.db.collection('businesses').add({
+            title: value.title,
+            description: value.description,
+            avatar: url,
+            edit: false
+          }).then(ref=>{
+            resolve();
+          }).catch(e=>{
+            console.log(e);
+            reject();
+          })
+        }).catch(e=>{
+          console.log(e);
+          reject();
+        })
+      }).catch(e=>{
+        console.log(e);
+        reject();
+      })
+    })
+    return p;
+  }
 
   getBusinesses(){
     return this.db.collection('businesses').snapshotChanges();

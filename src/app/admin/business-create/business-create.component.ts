@@ -19,21 +19,29 @@ export class BusinessCreateComponent implements OnInit {
   constructor(
     private bizService: BusinessService,
     private router:Router,
-    private upldService:UploadService,
+    // private upldService:UploadService,
   ) { }
 
   ngOnInit() {
   }
 
+  onFileChange(event){
+    this.createBiz.avatar = event.target.files[0];
+  }
+
   onSubmit(){
     console.log("Submitting..");
+
+    
     // this.upldService.pushUpload(this.createBiz);
-    // this.bizService.createBusiness(this.createBiz)
-    // .then(
-    //   res => {
-    //     this.createBiz= new Business("","","");;
-    //     this.router.navigate(['/admin/list']);
-    //   }
-    // )
+    this.bizService.createBusiness(this.createBiz)
+    .then(
+      res => {
+        this.createBiz= new Business("","","");;
+        this.router.navigate(['/admin/list']);
+      }
+    ).catch(e=>{
+      alert("error creating business")
+    })
   }
 }
