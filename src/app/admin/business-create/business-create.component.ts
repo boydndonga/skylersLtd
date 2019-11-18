@@ -14,7 +14,7 @@ import { UploadService } from '../crud/upload.service';
 })
 export class BusinessCreateComponent implements OnInit {
 
-  createBiz = new Business("","","");
+  createBiz = new Business("","",null);
 
   constructor(
     private bizService: BusinessService,
@@ -37,7 +37,7 @@ export class BusinessCreateComponent implements OnInit {
     this.bizService.createBusiness(this.createBiz)
     .then(
       res => {
-        this.createBiz= new Business("","","");;
+        this.createBiz= new Business("","",null);;
         this.router.navigate(['/admin/list']);
       }
     ).catch(e=>{

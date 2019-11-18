@@ -18,7 +18,7 @@ export class BusinessListComponent implements OnInit {
   conf:boolean
 
 
-  updateForm = new Business("","","");
+  updateForm = new Business("","",null);
    
 
   constructor(
