@@ -60,8 +60,5 @@ export class AuthService {
       return  user  !==  null;
     }
 
-    // isUserLoggedIn() {
-    //   return JSON.parse(localStorage.getItem('user'));
-    // }
    
 }
