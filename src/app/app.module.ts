@@ -20,6 +20,7 @@ import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BDevComponent } from './b-dev/b-dev.component';
 
 
@@ -46,6 +47,7 @@ import { BDevComponent } from './b-dev/b-dev.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     FormsModule,
+    AngularFireStorageModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

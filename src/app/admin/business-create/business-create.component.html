@@ -15,8 +15,21 @@
         <div class="form-group">
             <label for="image">upload Image</label>
             <input type="file" accept=".png,.jpg,.jpeg" 
-            class="form-control-file" [(ngModel)]="createBiz.avatar" name="avatar">
+            class="form-control-file" (change)="onFileChange($event)" name="avatar">
         </div>
-      
+
+        
         <button type="submit" class="btn btn-primary" >Submit</button>
       </form>
+
+
+
+      <!-- <div>
+        <label for="file">File:</label>
+        <input type="file" (change)="upldService.pushUpload($event)" accept=".png,.jpg" />
+      </div>
+
+    <progress max="100" [value]="(uploadProgress | async)"></progress>
+    <div class="result" *ngIf="uploadURL | async; let uploadSrc">
+      <a [href]="uploadSrc">You just uploaded this file!</a>
+    </div> -->
