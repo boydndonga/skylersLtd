@@ -3,8 +3,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { BusinessService } from '../crud/business.service';
 import { Router } from '@angular/router';
 import { Business } from '../business-class/business';
-import { UploadService } from '../crud/upload.service';
-
 
 
 @Component({
@@ -19,7 +17,6 @@ export class BusinessCreateComponent implements OnInit {
   constructor(
     private bizService: BusinessService,
     private router:Router,
-    // private upldService:UploadService,
   ) { }
 
   ngOnInit() {
@@ -32,9 +29,7 @@ export class BusinessCreateComponent implements OnInit {
   onSubmit(){
     console.log("Submitting..");
 
-    
-    // this.upldService.pushUpload(this.createBiz);
-    this.bizService.createBusiness(this.createBiz)
+        this.bizService.createBusiness(this.createBiz)
     .then(
       res => {
         this.createBiz= new Business("","",null);;
