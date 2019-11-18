@@ -20,6 +20,7 @@ import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { BDevComponent } from './b-dev/b-dev.component';
 
 
 
@@ -33,7 +34,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
     LandsGalleryComponent,
     HomeComponent,
     ContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BDevComponent
   ],
   imports: [
     BrowserModule,
