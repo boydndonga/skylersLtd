@@ -5,6 +5,7 @@ import {HomeComponent} from './home/home.component';
 import { LandsGalleryComponent } from './lands-gallery/lands-gallery.component';
 import { BDevComponent } from './b-dev/b-dev.component';
 import {ContactComponent} from './contact/contact.component';
+import {NewsComponent} from './news/news.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'business-development',
     component: BDevComponent 
+  },
+  {
+    path: 'news',
+    component: NewsComponent
   },
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
