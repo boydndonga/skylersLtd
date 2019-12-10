@@ -1,13 +1,23 @@
-  
-    <label>
-      Email:
-      <input type="email" [formControl]="email">
-    </label>
-  
-    <label>
-      Password:
-      <input type="password" [formControl]="password">
-    </label>
-  
-    <button type="submit" (click)="onSubmit(email.value, password.value)">Submit</button>
-  
+    <!-- <div class="row"> -->
+      <!-- Grid column -->
+      <div class="col-md-6 mb-4">
+          <div class="card">
+              <div class="card-body">
+                  <h3 class="text-center default-text py-3"><i class="fa fa-lock"></i> Login:</h3>
+                  <!--Body-->
+                  <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" [formControl]="email" placeholder="Your Email">
+                  </div>
+                  <div class="md-form">
+                      <i class="fa fa-lock prefix grey-text"></i>
+                      <input type="password" [formControl]="password" placeholder="Your Password">
+                  </div>
+                  <div class="text-center">
+                      <button class="btn btn-default waves-effect waves-light" 
+                      (click)="onSubmit(email.value, password.value)">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- </div> -->

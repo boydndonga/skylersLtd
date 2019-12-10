@@ -2,6 +2,9 @@ import {NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/
 import {DOCUMENT} from '@angular/common';
 import {createViewChild} from '@angular/compiler/src/core';
 import {Component, OnInit} from '@angular/core';
+import { AuthService } from '../admin/auth/auth.service';
+
+
 declare var $: any;
 
 @Component({
@@ -12,7 +15,7 @@ declare var $: any;
 export class NavbarComponent implements OnInit {
   collapseMenu: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth:AuthService) {
   router.events.subscribe((event) => {
 
       if (event instanceof NavigationStart) {
@@ -38,4 +41,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout(){
+    this.auth.logout();
+  }
 }
