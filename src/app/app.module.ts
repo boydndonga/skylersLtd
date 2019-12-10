@@ -22,6 +22,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BDevComponent } from './b-dev/b-dev.component';
+import { NewsComponent } from './news/news.component';
 
 
 
@@ -36,7 +37,8 @@ import { BDevComponent } from './b-dev/b-dev.component';
     HomeComponent,
     ContactComponent,
     NotFoundComponent,
-    BDevComponent
+    BDevComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

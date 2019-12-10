@@ -1,0 +1,10 @@
+card{
+    box-sizing: 0;
+}
+.card-body{
+    max-height: 350px;
+    overflow-y: scroll;
+}
+.card-header{
+    color: #2284c6;
+}
