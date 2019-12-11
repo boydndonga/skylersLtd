@@ -7,6 +7,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NewsComponent } from './news/news.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsCreateComponent } from './news-create/news-create.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { NewsComponent } from './news/news.component';
     BusinessCreateComponent, 
     BusinessComponent, 
     LoginComponent,
-    NewsComponent
+    NewsComponent,
+    NewsListComponent,
+    NewsCreateComponent
   ],
 
   imports: [

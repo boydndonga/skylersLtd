@@ -7,25 +7,51 @@ import { BusinessListComponent } from './business-list/business-list.component';
 import { BusinessCreateComponent } from './business-create/business-create.component';
 import { LoginComponent } from './login/login.component';
 import { AdminGuard } from './admin.guard';
+import { NewsComponent } from './news/news.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsCreateComponent } from './news-create/news-create.component';
 
 
 
 const routes: Routes = [
     {
 
+        // path:  '',
+        // component:  BusinessComponent,
+        // children: [
+
+        //     {
+        //         path: 'list',
+        //         component: BusinessListComponent,
+        //         canActivate: [AdminGuard]
+        //     },
+
+        //     {
+        //         path: 'create',
+        //         component: BusinessCreateComponent,
+        //         canActivate: [AdminGuard]
+        //     },
+
+        //     {
+        //         path: 'login',
+        //         component: LoginComponent
+        //     },
+
+        // ]
+
         path:  '',
-        component:  BusinessComponent,
+        component:  NewsComponent,
         children: [
 
             {
                 path: 'list',
-                component: BusinessListComponent,
+                component: NewsListComponent,
                 canActivate: [AdminGuard]
             },
 
             {
                 path: 'create',
-                component: BusinessCreateComponent,
+                component: NewsCreateComponent,
                 canActivate: [AdminGuard]
             },
 
@@ -35,7 +61,6 @@ const routes: Routes = [
             },
 
         ]
-
     },
 
 
