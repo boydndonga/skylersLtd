@@ -16,12 +16,12 @@ export class NewsService {
     return this.storage.upload(path, file);
   }
 
-  createBusiness(value:News){
+  createNews(value:News){
     let p = new Promise((resolve, reject)=>{
       this.uploadFile(value.avatar).then(snap=>{
         snap.ref.getDownloadURL().then(url=>{
           console.log(url);
-          this.db.collection('businesses').add({
+          this.db.collection('news').add({
             title: value.title,
             description: value.description,
             avatar: url,
@@ -44,11 +44,11 @@ export class NewsService {
     return p;
   }
 
-  getBusinesses(){
-    return this.db.collection('businesses').snapshotChanges();
+  getNews(){
+    return this.db.collection('news').snapshotChanges();
   }
 
-  updateBiz(updateValue:any,valueId:any,changed:Boolean) {
+  updateNews(updateValue:any,valueId:any,changed:Boolean) {
 
     new Promise((resolve, reject)=>{
 
@@ -57,7 +57,7 @@ export class NewsService {
         this.uploadFile(updateValue.avatar).then(snap=>{
           snap.ref.getDownloadURL().then(url=>{
             console.log(url);
-            this.db.collection('businesses').doc(valueId.payload.doc.id).set({
+            this.db.collection('news').doc(valueId.payload.doc.id).set({
               title: updateValue.title,
               description: updateValue.description,
               avatar: url,
@@ -75,7 +75,7 @@ export class NewsService {
         })
       }else{
 
-        this.db.collection('businesses').doc(valueId.payload.doc.id).set({
+        this.db.collection('news').doc(valueId.payload.doc.id).set({
         title: updateValue.title,
         description: updateValue.description,
         avatar: updateValue.avatar,
@@ -85,8 +85,8 @@ export class NewsService {
     })
   }
 
-  deleteBiz(biz:any){
+  deleteNews(news:any){
     
-    return this.db.collection('businesses').doc(biz.payload.doc.id).delete();
+    return this.db.collection('news').doc(news.payload.doc.id).delete();
   }
 }
