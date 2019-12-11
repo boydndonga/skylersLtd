@@ -6,6 +6,7 @@ import { BusinessComponent } from './business/business.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BusinessListComponent, 
     BusinessCreateComponent, 
     BusinessComponent, 
-    LoginComponent
+    LoginComponent, NewsComponent
   ],
 
   imports: [
