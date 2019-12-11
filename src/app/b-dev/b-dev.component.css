@@ -30,22 +30,22 @@ h4:hover{
    color:#2284c6;
 }
 
-div.container .row:nth-child(even) .card{
+div.container .row div:nth-child(even) .card{
    border-top: 2px solid #f79831;
 }
-div.container .row:nth-child(even) .card-header{
+div.container .row div:nth-child(even) .card-header{
    color:#f79831;
 }
-div.container .row:nth-child(odd) .card-header{
+div.container .row div:nth-child(odd) .card-header{
     color:#2284c6
 }
-div.container .row:nth-child(even) .card:hover{
+div.container .row div:nth-child(even) .card:hover{
    border-top: 5px solid #f79831;
 }
 div.container .row:nth-child(odd) .card{
    border-top: 2px solid #2284c6;
 }
-div.container .row:nth-child(odd) .card:hover{
+div.container .row div:nth-child(odd) .card:hover{
    border-top: 5px solid #2284c6;
 }
 @media only screen and (max-width:900px){
