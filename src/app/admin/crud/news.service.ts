@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { News } from '../news-class/news';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class NewsService {
     return this.storage.upload(path, file);
   }
 
-  createBusiness(value:Business){
+  createBusiness(value:News){
     let p = new Promise((resolve, reject)=>{
       this.uploadFile(value.avatar).then(snap=>{
         snap.ref.getDownloadURL().then(url=>{
