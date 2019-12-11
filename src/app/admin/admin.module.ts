@@ -14,7 +14,8 @@ import { NewsComponent } from './news/news.component';
     BusinessListComponent, 
     BusinessCreateComponent, 
     BusinessComponent, 
-    LoginComponent, NewsComponent
+    LoginComponent,
+    NewsComponent
   ],
 
   imports: [
