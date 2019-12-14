@@ -13,16 +13,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  responseMessage: string = '';
-  responseMessageType: string = '';
-  emailInput: string;
-  passwordInput: string;
-  userDetails: any;
-  
+  logStat: boolean;
+
   constructor(
     private authService: AuthService,
     private router: Router
-  ) { }
+  ) {
+    this.alreadyLogged();
+   }
 
 
   email =  new FormControl('');
@@ -31,6 +29,15 @@ export class LoginComponent {
 
   onSubmit(mail,pass){
    this.authService.login(mail,pass);
+  }
+
+  alreadyLogged(){
+    if (this.authService.isLoggedIn) {
+      this.logStat=true;
+      this.router.navigate(['/admin/list'])
+    } else {
+      this.logStat=false;
+    }
   }
 
 }
