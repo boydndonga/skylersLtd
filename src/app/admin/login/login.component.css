@@ -62,3 +62,9 @@
     background-image: linear-gradient(to bottom, #5ee7df 0%, #b490ca 100%);
 }
 
+#log{
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+}
+

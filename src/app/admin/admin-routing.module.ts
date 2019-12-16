@@ -37,6 +37,12 @@ const routes: Routes = [
                 component: LoginComponent
             },
 
+            { 
+                path: '',
+                redirectTo: '/admin/login',
+                pathMatch: 'full'
+            },
+
             {
                 path: 'news/list',
                 component: NewsListComponent,

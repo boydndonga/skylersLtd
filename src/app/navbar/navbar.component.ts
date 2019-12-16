@@ -1,6 +1,4 @@
 import {NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
-import {DOCUMENT} from '@angular/common';
-import {createViewChild} from '@angular/compiler/src/core';
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from '../admin/auth/auth.service';
 
@@ -18,26 +16,25 @@ export class NavbarComponent implements OnInit {
 
 
   constructor(private router: Router, private auth:AuthService) {
-  router.events.subscribe((event) => {
+    router.events.subscribe((event) => {
 
-      if (event instanceof NavigationStart) {
-        // Show loading indicator
-        console.log(event);
-      }
+        if (event instanceof NavigationStart) {
+          // Show loading indicator
+          console.log(event);
+        }
 
-      if (event instanceof NavigationEnd) {
-        // Hide loading indicator
-        console.log(event);
+        if (event instanceof NavigationEnd) {
+          // Hide loading indicator
+          console.log(event);
 
-      }
+        }
 
-      if (event instanceof NavigationError) {
-        // Hide loading indicator
-        // Present error to user
-        console.log(event.error);
-      }
-    });
-
+        if (event instanceof NavigationError) {
+          // Hide loading indicator
+          // Present error to user
+          console.log(event.error);
+        }
+      });
   }
 
   ngOnInit() {
@@ -47,13 +44,12 @@ export class NavbarComponent implements OnInit {
     this.auth.logout();
   }
 
-  alreadyLogged(){
+ alreadyLogged(){
     if (this.auth.isLoggedIn) {
-      this.logStat=true;
-      this.router.navigate(['/admin/list'])
+      return true;
     } else {
-      this.logStat=false;
-      this.router.navigate(['/admin/login'])
+      return false;
     }
+    location.reload();
   }
 }
