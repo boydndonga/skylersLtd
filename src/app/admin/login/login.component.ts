@@ -34,7 +34,7 @@ export class LoginComponent {
   alreadyLogged(){
     if (this.authService.isLoggedIn) {
       this.logStat=true;
-      this.router.navigate(['/admin/list'])
+      this.router.navigate(['/admin/business/list'])
     } else {
       this.logStat=false;
     }

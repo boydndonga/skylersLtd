@@ -36,10 +36,18 @@
             <a  class="nav-link" href="#" data-toggle="collapse" data-target="#navbarResponsive">
               <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact Us</a></a>
           </li>
-
-          <li class="nav-item">
-            <a  class="nav-link" href="#" data-toggle="collapse" data-target="#navbarResponsive">
-              <a class="nav-link" routerLink="/admin/login" routerLinkActive="active">Admin</a></a>
+          <li class="nav-item dropdown pt-md-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Admin
+            </a>
+            <div class="dropdown-menu px-4 mr-4" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  href="/admin/business/list">Edit a business</a>
+              <a class="dropdown-item" href="/admin/business/create">Post a business</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/admin/news/list">Edit news</a>
+              <a class="dropdown-item" (click)='logout()'>Logout</a>
+            </div>
           </li>
         </ul>
       </div>

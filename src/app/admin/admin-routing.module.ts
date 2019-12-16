@@ -21,13 +21,13 @@ const routes: Routes = [
         children: [
 
             {
-                path: 'list',
+                path: 'business/list',
                 component: BusinessListComponent,
                 canActivate: [AdminGuard]
             },
 
             {
-                path: 'create',
+                path: 'business/create',
                 component: BusinessCreateComponent,
                 canActivate: [AdminGuard]
             },

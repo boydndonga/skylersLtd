@@ -30,7 +30,7 @@ export class AuthService {
 
       try {
             await  this.afAuth.auth.signInWithEmailAndPassword(email, password)
-            this.router.navigate(['admin/list']);
+            this.router.navigate(['admin/business/list']);
         } catch (e) {
             alert("Error!"  +  e.message);
         }
