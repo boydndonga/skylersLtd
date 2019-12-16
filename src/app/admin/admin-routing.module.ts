@@ -16,42 +16,19 @@ import { NewsCreateComponent } from './news-create/news-create.component';
 const routes: Routes = [
     {
 
-        // path:  '',
-        // component:  BusinessComponent,
-        // children: [
-
-        //     {
-        //         path: 'list',
-        //         component: BusinessListComponent,
-        //         canActivate: [AdminGuard]
-        //     },
-
-        //     {
-        //         path: 'create',
-        //         component: BusinessCreateComponent,
-        //         canActivate: [AdminGuard]
-        //     },
-
-        //     {
-        //         path: 'login',
-        //         component: LoginComponent
-        //     },
-
-        // ]
-
         path:  '',
-        component:  NewsComponent,
+        component:  BusinessComponent,
         children: [
 
             {
                 path: 'list',
-                component: NewsListComponent,
+                component: BusinessListComponent,
                 canActivate: [AdminGuard]
             },
 
             {
                 path: 'create',
-                component: NewsCreateComponent,
+                component: BusinessCreateComponent,
                 canActivate: [AdminGuard]
             },
 
@@ -59,6 +36,19 @@ const routes: Routes = [
                 path: 'login',
                 component: LoginComponent
             },
+
+            {
+                path: 'news/list',
+                component: NewsListComponent,
+                canActivate: [AdminGuard]
+            },
+
+            {
+                path: 'news/create',
+                component: NewsCreateComponent,
+                canActivate: [AdminGuard]
+            },
+    
 
         ]
     },
