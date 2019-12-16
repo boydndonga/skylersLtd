@@ -14,6 +14,8 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
   collapseMenu: boolean;
+  logStat: boolean;
+
 
   constructor(private router: Router, private auth:AuthService) {
   router.events.subscribe((event) => {
@@ -43,5 +45,15 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     this.auth.logout();
+  }
+
+  alreadyLogged(){
+    if (this.auth.isLoggedIn) {
+      this.logStat=true;
+      this.router.navigate(['/admin/list'])
+    } else {
+      this.logStat=false;
+      this.router.navigate(['/admin/login'])
+    }
   }
 }
