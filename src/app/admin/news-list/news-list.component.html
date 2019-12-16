@@ -1,15 +1,16 @@
 
 <div class="container">
 
-  <h2 class="pt-5">Business Interface</h2>
+  <<h2 class="pt-5">News Interface</h2>
 
   <div class=" py-4" *ngFor="let item of items; let i=index">
 
-          <div class="card" *ngIf="i!==selectedBizIndex; else elseBlock">
+          <div class="card" *ngIf="i!==selectedNewsIndex; else elseBlock">
             <div class="card-header">
-              {{item.payload.doc.data().title}}
+              <img [src]="item.payload.doc.data().avatar" alt="newsImage" width="100%" height="400px">
             </div>
             <div class="card-body">
+              <h3>{{item.payload.doc.data().title}}</h3>
               <p class="card-text">{{item.payload.doc.data().description}}</p>
               <button class="btn btn-outline-primary action" (click)="editDetails(item,i)" type="button">
                 Edit
@@ -19,7 +20,7 @@
               </button>
             </div>
           </div>
-          
+
           <ng-template #elseBlock>
                   <div class="card-body">
                     <h5 class="card-title">Edit</h5>
@@ -39,14 +40,10 @@
                       </div>
                     </div>
         
-                    <button class="card-link" (click)="editDetails(selectedBiz,selectedBizIndex)">Cancel</button>
+                    <button class="card-link" (click)="editDetails(selectedNews,selectedNewsIndex)">Cancel</button>
                     <button class="card-link" (click)="updateRecord()">Update</button>
                   </div>
                 </ng-template>
       </div>
 
   </div>
-
-
-    
-
