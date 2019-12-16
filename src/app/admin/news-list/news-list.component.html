@@ -12,38 +12,38 @@
             <div class="card-body">
               <h3>{{item.payload.doc.data().title}}</h3>
               <p class="card-text">{{item.payload.doc.data().description}}</p>
-              <button class="btn btn-outline-primary action" (click)="editDetails(item,i)" type="button">
-                Edit
+              <button class="btn btn-outline-primary action mr-3" (click)="editDetails(item,i)" type="button">
+                  Edit <i class="fa fa-edit"></i>
               </button>
               <button class="btn btn-outline-primary action" (click)="delete(item)" type="button">
-                Delete
+                  Delete <i class="fa fa-trash"></i>
               </button>
             </div>
           </div>
 
           <ng-template #elseBlock>
-                  <div class="card-body">
-                    <h5 class="card-title">Edit</h5>
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <input type="text" class="form-control" [(ngModel)]="updateForm.title" name="title"  placeholder="Edit Name">
-                        </div>
-                        <div class="col-md-12">
-                          <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc">
-                        </div>
-                        <div class="form-group">
-                          <label for="image">upload Image</label>
-                          <input type="file" accept=".png,.jpg,.jpeg" 
-                          class="form-control-file" (change)="onFileChange($event)" name="avatar">
-                      </div>
-                      </div>
-                    </div>
-        
-                    <button class="card-link" (click)="editDetails(selectedNews,selectedNewsIndex)">Cancel</button>
-                    <button class="card-link" (click)="updateRecord()">Update</button>
+            <div class="card-body">
+              <h5 class="card-title">Edit</h5>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12">
+                    <input type="text" class="form-control" [(ngModel)]="updateForm.title" name="title"  placeholder="Edit Name">
                   </div>
-                </ng-template>
+                  <div class="col-md-12">
+                    <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc">
+                  </div>
+                  <div class="form-group">
+                    <input  type="file" accept=".png,.jpg,.jpeg" 
+                    class="form-control-file btn btn-outline-warning" (change)="onFileChange($event)">
+                </div>
+                </div>
+              </div>
+  
+              <button class="btn btn-outline-primary action mr-3" (click)="updateRecord()">Update</button>
+              <button class="btn btn-outline-primary action" (click)="editDetails(selectedNews,selectedNewsIndex)">Cancel</button>
+
+            </div>
+          </ng-template>
       </div>
 
   </div>
