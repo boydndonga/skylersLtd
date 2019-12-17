@@ -1,7 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
+
+// firebase imports
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+// 3rd party
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
+// app imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,12 +21,6 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminModule } from './admin/admin.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { HttpClientModule } from '@angular/common/http';
-
-// firebase imports
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {LandsGalleryComponent} from './lands-gallery/lands-gallery.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { environment } from 'src/environments/environment';
@@ -49,7 +54,8 @@ import { NewsComponent } from './news/news.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     FormsModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    CKEditorModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
