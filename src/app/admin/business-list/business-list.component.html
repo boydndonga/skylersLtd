@@ -29,7 +29,11 @@
                           <input type="text" class="form-control" [(ngModel)]="updateForm.title" name="title"  placeholder="Edit Name">
                         </div>
                         <div class="col-md-12">
-                          <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc">
+                          <ckeditor
+                          [config]="editorConfig" [editor]="Editor"
+                          required [(ngModel)]="updateForm.description"
+                          data="" name="text"></ckeditor>
+                          <!-- <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc"> -->
                         </div>
                         <div class="col-md-4">
                           <input  type="file" accept=".png,.jpg,.jpeg" 

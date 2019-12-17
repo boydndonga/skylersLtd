@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CommonModule } from '@angular/common';
 import { BusinessListComponent } from './business-list/business-list.component';
 import { BusinessCreateComponent } from './business-create/business-create.component';
@@ -26,7 +27,8 @@ import { NewsCreateComponent } from './news-create/news-create.component';
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CKEditorModule
   ]
 })
 export class AdminModule { }

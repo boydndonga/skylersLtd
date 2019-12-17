@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { BusinessService } from '../crud/business.service';
 import { Router } from '@angular/router';
 import { Business } from '../business-class/business';
-
+import * as BalloonEditor from '@ckeditor/ckeditor5-build-balloon';
 
 
 @Component({
@@ -22,6 +22,10 @@ export class BusinessListComponent implements OnInit {
 
   updateForm = new Business("","",null);
    
+  Editor = BalloonEditor;
+  editorConfig = {
+    placeholder: 'Type the content here!',
+  };
 
   constructor(
     private bizService:BusinessService,

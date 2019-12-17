@@ -9,9 +9,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
-// 3rd party
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
 // app imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,7 +52,6 @@ import { NewsComponent } from './news/news.component';
     AngularFireDatabaseModule,
     FormsModule,
     AngularFireStorageModule,
-    CKEditorModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
