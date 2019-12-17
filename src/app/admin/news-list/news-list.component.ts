@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as BalloonEditor from '@ckeditor/ckeditor5-build-balloon';
 
 
 import { News } from '../news-class/news';
@@ -22,7 +23,10 @@ export class NewsListComponent implements OnInit {
 
 
   updateForm = new News("","",null);
-   
+  Editor = BalloonEditor;
+  editorConfig = {
+    placeholder: 'Type the content here!',
+  };
 
   constructor(
     private newsService:NewsService,

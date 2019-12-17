@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">
               <h3>{{item.payload.doc.data().title}}</h3>
-              <p class="card-text">{{item.payload.doc.data().description}}</p>
+              <ckeditor disabled="true" [editor]="Editor" [data]="item.payload.doc.data().description"></ckeditor>
               <button class="btn btn-outline-primary action mr-3" (click)="editDetails(item,i)" type="button">
                   Edit <i class="fa fa-edit"></i>
               </button>
@@ -30,7 +30,10 @@
                     <input type="text" class="form-control" [(ngModel)]="updateForm.title" name="title"  placeholder="Edit Name">
                   </div>
                   <div class="col-md-12">
-                    <input type="text" class="form-control" [(ngModel)]="updateForm.description" placeholder="Edit Desc">
+                      <ckeditor class="edy"
+                      [config]="editorConfig" [editor]="Editor"
+                      required [(ngModel)]="updateForm.description"
+                      data="" name="text"></ckeditor>                  
                   </div>
                   <div class="form-group">
                     <input  type="file" accept=".png,.jpg,.jpeg" 
