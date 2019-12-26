@@ -22,10 +22,6 @@ export class BusinessCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onFileChange(event){
-  //   this.createBiz.avatar = event.target.files[0];
-  // }
-
   onSubmit(){
     console.log("Submitting..");
 

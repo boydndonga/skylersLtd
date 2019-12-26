@@ -16,11 +16,10 @@ export class BusinessListComponent implements OnInit {
   selectedBizIndex:number;
   selectedBiz:any;
   conf:boolean
-  changeState:Boolean = false
 
 
 
-  updateForm = new Business("","",null);
+  updateForm = new Business("","");
    
   Editor = BalloonEditor;
   editorConfig = {
@@ -39,10 +38,6 @@ export class BusinessListComponent implements OnInit {
     })
   }
 
-  onFileChange(event){
-    this.updateForm.avatar = event.target.files[0];
-    this.changeState = true
-  }
 
   editDetails(biz:any,bizIndex:number){
     if(this.selectedBizIndex==bizIndex){
@@ -50,13 +45,13 @@ export class BusinessListComponent implements OnInit {
       this.selectedBiz=''
     }else{
       this.selectedBizIndex=bizIndex;
-      this.updateForm =new Business(biz.payload.doc.data().title,biz.payload.doc.data().description,biz.payload.doc.data().avatar)
+      this.updateForm =new Business(biz.payload.doc.data().title,biz.payload.doc.data().description)
       this.selectedBiz=biz
     }
   }
 
   updateRecord(){
-    this.bizService.updateBiz(this.updateForm,this.selectedBiz,this.changeState)
+    this.bizService.updateBiz(this.updateForm,this.selectedBiz)
     this.selectedBizIndex=null;
     this.selectedBiz=''
 
@@ -68,7 +63,7 @@ export class BusinessListComponent implements OnInit {
           this.bizService.deleteBiz(item)
         .then(
           res => {
-            this.router.navigate(['/admin/list']);
+            this.router.navigate(['/admin/business/list']);
           },
           err => {
             console.log(err);
