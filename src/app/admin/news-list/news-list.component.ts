@@ -69,7 +69,7 @@ export class NewsListComponent implements OnInit {
           this.newsService.deleteNews(item)
         .then(
           res => {
-            this.router.navigate(['/admin/list']);
+            this.router.navigate(['/admin/news/list']);
           },
           err => {
             console.log(err);

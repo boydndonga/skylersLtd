@@ -34,7 +34,7 @@ export class NewsCreateComponent implements OnInit {
     .then(
       res => {
         this.createNews= new News("","",null);;
-        this.router.navigate(['/admin/list']);
+        this.router.navigate(['/admin/news/list']);
       }
     ).catch(e=>{
       alert("error creating business")
