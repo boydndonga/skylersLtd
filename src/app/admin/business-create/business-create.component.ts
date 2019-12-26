@@ -12,7 +12,7 @@ import { Business } from '../business-class/business';
 })
 export class BusinessCreateComponent implements OnInit {
 
-  createBiz = new Business("","",null);
+  createBiz = new Business("","");
 
   constructor(
     private bizService: BusinessService,
@@ -22,9 +22,9 @@ export class BusinessCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  onFileChange(event){
-    this.createBiz.avatar = event.target.files[0];
-  }
+  // onFileChange(event){
+  //   this.createBiz.avatar = event.target.files[0];
+  // }
 
   onSubmit(){
     console.log("Submitting..");
@@ -32,8 +32,8 @@ export class BusinessCreateComponent implements OnInit {
         this.bizService.createBusiness(this.createBiz)
     .then(
       res => {
-        this.createBiz= new Business("","",null);;
-        this.router.navigate(['/admin/list']);
+        this.createBiz= new Business("","");;
+        this.router.navigate(['/admin/business/list']);
       }
     ).catch(e=>{
       alert("error creating business")

@@ -11,31 +11,20 @@ export class BusinessService {
 
   constructor(private db:AngularFirestore, private storage:AngularFireStorage) { }
 
-  uploadFile(file:File){
-    let path = `/uploads/${new Date().getTime()}_${file.name}`;
-    return this.storage.upload(path, file);
-  }
+  // uploadFile(file:File){
+  //   let path = `/uploads/${new Date().getTime()}_${file.name}`;
+  //   return this.storage.upload(path, file);
+  // }
 
   createBusiness(value:Business){
     let p = new Promise((resolve, reject)=>{
-      this.uploadFile(value.avatar).then(snap=>{
-        snap.ref.getDownloadURL().then(url=>{
-          console.log(url);
-          this.db.collection('businesses').add({
-            title: value.title,
-            description: value.description,
-            avatar: url,
-            edit: false
-          }).then(ref=>{
-            resolve();
-          }).catch(e=>{
-            console.log(e);
-            reject();
-          })
-        }).catch(e=>{
-          console.log(e);
-          reject();
-        })
+      this.db.collection('businesses').add({
+        title: value.title,
+        description: value.description,
+        // avatar: url,
+        edit: false
+      }).then(ref=>{
+        resolve();
       }).catch(e=>{
         console.log(e);
         reject();
